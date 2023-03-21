@@ -1,0 +1,51 @@
+.modal {
+  position: relative;
+  margin: 15px;
+  padding: 30px;
+  width: calc(100% - 30px);
+  max-width: 330px;
+  color: var(--black);
+  background-color: var(--white);
+
+  &__close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-gray);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    display: grid;
+    row-gap: 18px;
+  }
+
+  &__confirm {
+    margin-top: 6px;
+    color: var(--dark-gray);
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  @include media-min ($md) {
+    max-width: 500px;
+    padding: 40px;
+
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+}

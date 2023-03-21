@@ -1,0 +1,42 @@
+.base-auth {
+  padding-top: 24px;
+  padding-bottom: 50px;
+
+  &__container {
+    max-width: 466px;
+  }
+
+  &__form {
+    animation-duration: .5s;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  &__login {
+    margin-bottom: 18px;
+  }
+
+  &__password {
+    margin-bottom: 24px;
+  }
+
+  &__remember {
+    margin-bottom: 30px;
+  }
+
+  &__submit {
+    width: 100%;
+  }
+
+  @include media-min ($md) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+
+    &__container {
+      padding: 0 15px;
+    }
+  }
+}

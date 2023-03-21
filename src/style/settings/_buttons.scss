@@ -1,0 +1,29 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 700;
+  padding: 18px 32px 16px;
+  color: var(--white);
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:disabled,
+  &.disabled {
+    filter: grayscale(1) opacity(.3);
+    pointer-events: none;
+  }
+
+  @include media-min ($xl) {
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+
+    &:hover {
+      color: var(--accent);
+      background-color: transparent;
+    }
+  }
+}

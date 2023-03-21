@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 910px;
+
+  &__wrapper {
+    box-sizing: border-box;
+  }
+
+  &__slide {
+    & figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+
+      & > a {
+        flex-shrink: 0;
+        height: 180px;
+      }
+    }
+
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & figcaption {
+      margin-top: 10px;
+    }
+  }
+
+  &__pagination {
+    text-align: center;
+
+    & .swiper-pagination-bullet {
+      background-color: var(--black);
+    }
+
+    & .swiper-pagination-bullet-active {
+      background-color: var(--accent);
+    }
+  }
+}

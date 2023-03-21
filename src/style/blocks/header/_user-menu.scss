@@ -1,0 +1,84 @@
+.user-menu {
+  &__item {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top: 1px solid var(--medium-gray);
+  }
+
+  &__btn {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: var(--black);
+    text-decoration: none;
+
+    & svg {
+      margin-right: 10px;
+    }
+  }
+
+  &__modal-trigger {
+    & svg {
+      color: var(--accent);
+    }
+  }
+
+  @include media-min ($md) {
+    &__item {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  @include media-min ($xl) {
+    display: flex;
+    padding-left: 38px;
+
+    &__item {
+      padding: 0;
+      border: none;
+
+      &:not(:first-of-type) {
+        margin-left: 30px;
+      }
+    }
+
+    &__btn {
+      padding: 0;
+      align-items: center;
+
+      & svg {
+        margin-right: 18px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &__dealer-link {
+      transition: color .15s ease-in-out;
+
+      &:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+    }
+
+    &__modal-trigger {
+      transition: color .15s ease-in-out;
+      color: var(--accent);
+
+      & svg {
+        color: inherit;
+      }
+
+      &:hover {
+        color: var(--black);
+      }
+    }
+
+    &__hide-desktop-text {
+      @include vsh;
+    }
+  }
+}

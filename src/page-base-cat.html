@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  @include('html/head/index.html')
+  <title>Ренессанс База знаний</title>
+</head>
+
+<body class="indent-reset site">
+  <div aria-hidden="true" id="site-top"></div>
+  <div class="site__container">
+    @include('html/header/index.html')
+    <div class="site__content">
+      @include('html/aside/index.html')
+      <main>
+        @include('html/utils/breadcrumbs.html')
+        @include('html/base-cat/index.html')
+      </main>
+    </div>
+    @include('html/footer/index.html')
+  </div>
+  @include('html/footer/scripts.html')
+</body>
+
+</html>

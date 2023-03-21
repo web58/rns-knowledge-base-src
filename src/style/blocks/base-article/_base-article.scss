@@ -1,0 +1,17 @@
+.base-article {
+  padding-top: 24px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__details {
+    margin-bottom: 30px;
+  }
+
+  @include media-min ($md) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+}

@@ -1,0 +1,54 @@
+.site-nav {
+  &__base-tree {
+    border-bottom: 1px solid var(--medium-gray);
+  }
+
+  &__pages {
+    & li {
+      padding-left: 15px;
+      padding-right: 15px;
+      border-bottom: 1px solid var(--medium-gray);
+    }
+  }
+
+  &__page-link {
+    display: inline-block;
+    padding-top: 17px;
+    padding-bottom: 14px;
+    color: var(--black);
+    text-decoration: none;
+
+    &--icon {
+      position: relative;
+      padding-left: 25px;
+      color: var(--accent);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 16px 16px;
+    }
+  }
+
+  &__faq-page {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1.5C4.14086 1.5 1 4.64086 1 8.5C1 12.3591 4.14086 15.5 8 15.5C11.8591 15.5 15 12.3591 15 8.5C15 4.64086 11.8591 1.5 8 1.5ZM0 8.5C0 4.08857 3.58857 0.5 8 0.5C12.4114 0.5 16 4.08857 16 8.5C16 12.9114 12.4114 16.5 8 16.5C3.58857 16.5 0 12.9114 0 8.5Z' fill='%23841308'/%3E%3Cpath d='M8.01053 12.615C7.72762 12.615 7.49101 12.3836 7.49101 12.1006C7.49101 11.8177 7.72248 11.5863 8.00538 11.5863H8.01053C8.29343 11.5863 8.5249 11.8177 8.5249 12.1006C8.5249 12.3836 8.29343 12.615 8.01053 12.615ZM9.28616 8.64924C8.80265 8.96814 8.51461 9.53395 8.51461 10.1615C8.51461 10.4444 8.28314 10.6758 8.00024 10.6758C7.71734 10.6758 7.48587 10.4444 7.48587 10.1615C7.48587 9.18932 7.94366 8.30461 8.71521 7.79538C9.173 7.49191 9.38903 6.94153 9.26044 6.40145C9.15757 5.93851 8.77179 5.55788 8.314 5.44986C7.90765 5.35728 7.51159 5.44472 7.19268 5.69676C6.88406 5.94366 6.70403 6.314 6.70403 6.71007C6.70403 6.99297 6.47256 7.22443 6.18966 7.22443C5.90162 7.22443 5.67529 6.99297 5.67529 6.71007C5.67529 6.00024 5.9942 5.3367 6.55486 4.8892C7.11038 4.44684 7.83564 4.28739 8.54547 4.44684C8.96382 4.54572 9.34628 4.75939 9.6498 5.06381C9.95331 5.36824 10.1658 5.75133 10.2635 6.16998C10.4846 7.13185 10.0989 8.10915 9.28616 8.64924Z' fill='%23841308'/%3E%3C/svg%3E");
+  }
+
+  @include media-min ($md) {
+    &__pages {
+      & li {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    &__page-link {
+      transition: color .2s ease-in-out;
+
+      &:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+    }
+  }
+}

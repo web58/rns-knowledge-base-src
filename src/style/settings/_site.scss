@@ -1,0 +1,104 @@
+.site {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: calc(100 * var(--vh, 1vh));
+  }
+
+  &__header {
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding-top: 60px;
+  }
+
+  &__aside {
+    display: none;
+  }
+
+  @include media-min ($xl) {
+    &__content {
+      padding-top: 80px;
+      display: flex;
+
+      & main {
+        flex-basis: 100%;
+      }
+    }
+
+    &__aside {
+      --toggler-width: 16px;
+      --min-aside-width: 450px;
+
+      display: block;
+      width: calc(var(--toggler-width) + var(--min-aside-width));
+      flex-shrink: 0;
+      will-change: width;
+      transition: width .2s ease-in-out;
+
+      &--collapsed {
+        width: var(--toggler-width);
+        margin-right: -14px;
+      }
+    }
+
+    &__aside-sticky {
+      position: sticky;
+      top: 80px;
+      display: flex;
+    }
+
+    &__aside-wrapper {
+      height: calc(100 * var(--vh, 1vh) - 80px);
+      max-height: calc(100 * var(--vh, 1vh) - 80px);
+      overflow: auto;
+
+      &--hide {
+        visibility: hidden;
+        overflow: hidden;
+      }
+
+      & > * {
+        min-width: calc(var(--min-aside-width) - var(--toggler-width));
+      }
+    }
+
+    &__aside-toggler {
+      position: relative;
+      width: var(--toggler-width);
+      background-color: var(--white);
+      border-left: 1px solid var(--medium-gray);
+      border-right: 1px solid var(--light-gray);
+      flex-shrink: 0;
+      transition: background-color .2s ease-in-out;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_126_1183)'%3E%3Cpath d='M0.695882 6.02792L4.66672 9.99792L5.55005 9.11417L1.57963 5.14417C1.54147 5.1059 1.52003 5.05406 1.52003 5.00001C1.52003 4.94596 1.54147 4.89411 1.57963 4.85584L5.55005 0.88584L4.66671 6.67372e-06L0.696298 3.97001C0.423408 4.24288 0.270063 4.61297 0.269985 4.99888C0.269907 5.38479 0.423102 5.75494 0.695882 6.02792Z' fill='%237B808A'/%3E%3Cpath d='M4.25006 5.44208L8.80839 9.99791L9.69214 9.11416L5.57797 4.99999L9.69214 0.885825L8.80839 -8.58503e-06L4.25006 4.55791C4.19198 4.61595 4.1459 4.68487 4.11447 4.76072C4.08303 4.83658 4.06686 4.91788 4.06686 4.99999C4.06686 5.0821 4.08303 5.16341 4.11447 5.23926C4.1459 5.31512 4.19198 5.38403 4.25006 5.44208Z' fill='%237B808A'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_126_1183'%3E%3Crect width='10' height='10' fill='white' transform='translate(10 10) rotate(180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 10px 10px;
+      }
+
+      &--active {
+        background-color: var(--light-gray);
+
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        background-color: var(--light-gray);
+      }
+    }
+  }
+}

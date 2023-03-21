@@ -1,0 +1,71 @@
+.article-content {
+  & > div[id] {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  & figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  & figcaption {
+    font-size: 14px;
+    color: var(--dark-gray);
+  }
+
+  & table {
+    border-collapse: collapse;
+
+    & tr {
+      &:first-of-type {
+        background-color: var(--light-gray);
+      }
+    }
+
+    & td {
+      padding: 8px 12px;
+      min-width: 65px;
+      border: 1px solid var(--medium-gray);
+    }
+  }
+
+  & a {
+    &[download] {
+      position: relative;
+      display: block;
+      padding: 10px 16px;
+      padding-left: 48px;
+      color: var(--black);
+      background-color: var(--light-gray);
+      text-decoration: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 16px;
+        top: 13px;
+        width: 15px;
+        height: 15px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3202 10.7105V12.1468C14.3202 12.2484 14.2799 12.3458 14.208 12.4177C14.1362 12.4895 14.0388 12.5298 13.9372 12.5298H2.06336C1.96177 12.5298 1.86435 12.4895 1.79252 12.4177C1.72069 12.3458 1.68033 12.2484 1.68033 12.1468V10.7105H0.53125V13.6789H15.4693V10.7105H14.3202ZM12.4141 5.59418L11.6017 4.78179L9.22864 7.15464C9.17508 7.20819 9.10683 7.24465 9.03254 7.25943C8.95825 7.2742 8.88125 7.26661 8.81127 7.23763C8.74129 7.20865 8.68148 7.15956 8.63939 7.09659C8.5973 7.03362 8.57483 6.95958 8.57481 6.88384V0.320862H7.42573V6.88384C7.42572 6.95958 7.40324 7.03362 7.36116 7.09659C7.31907 7.15956 7.25925 7.20865 7.18927 7.23763C7.1193 7.26661 7.04229 7.2742 6.968 7.25943C6.89372 7.24465 6.82547 7.20819 6.77191 7.15464L4.39886 4.78179L3.58646 5.59418L8.00027 10.0082L12.4141 5.59418Z' fill='%23841308'/%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    & a {
+      &[download] {
+        transition: color .2s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}

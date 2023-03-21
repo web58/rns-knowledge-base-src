@@ -1,0 +1,73 @@
+.faq-item {
+  position: relative;
+
+  &__title {
+    display: block;
+    font-weight: 700;
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transition: transform .3s ease-in-out;
+    }
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10.5' width='20' height='1' transform='rotate(90 10.5 0)' fill='%237B808A'/%3E%3Crect x='20' y='10.5' width='20' height='1' transform='rotate(-180 20 10.5)' fill='%237B808A'/%3E%3C/svg%3E");
+    }
+
+    &::after {
+      transform: scale(0);
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.2832' y='2.5752' width='20' height='1' transform='rotate(45 3.2832 2.5752)' fill='%237B808A'/%3E%3Crect x='17.4238' y='3.2832' width='20' height='1' transform='rotate(135 17.4238 3.2832)' fill='%237B808A'/%3E%3C/svg%3E ");
+    }
+  }
+
+  &[open] {
+    & > summary {
+      margin-bottom: 10px;
+
+      &::before {
+        transform: scale(0);
+      }
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__content {
+    & > * {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__title {
+      &:hover {
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10.5' width='20' height='1' transform='rotate(90 10.5 0)' fill='%23841308'/%3E%3Crect x='20' y='10.5' width='20' height='1' transform='rotate(-180 20 10.5)' fill='%23841308'/%3E%3C/svg%3E");
+        }
+
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.2832' y='2.5752' width='20' height='1' transform='rotate(45 3.2832 2.5752)' fill='%23841308'/%3E%3Crect x='17.4238' y='3.2832' width='20' height='1' transform='rotate(135 17.4238 3.2832)' fill='%23841308'/%3E%3C/svg%3E ");
+        }
+      }
+    }
+  }
+}

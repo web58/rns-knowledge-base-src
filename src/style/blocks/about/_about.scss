@@ -1,0 +1,30 @@
+.about {
+  padding-top: 24px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+  }
+
+  &__poster {
+    & img {
+      display: block;
+      min-height: 240px;
+      object-fit: cover;
+    }
+
+    & figcaption {
+      margin-top: 10px;
+      color: var(--dark-gray);
+    }
+  }
+
+  @include media-min ($md) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+}

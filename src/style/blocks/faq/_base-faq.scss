@@ -1,0 +1,19 @@
+.base-faq {
+  padding-top: 24px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid var(--medium-gray);
+  }
+
+  @include media-min ($md) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+}

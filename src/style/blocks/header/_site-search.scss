@@ -1,0 +1,17 @@
+.site-search {
+  padding: 24px 15px;
+
+  &__submit {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  @include media-min ($xl) {
+    width: 600px;
+    padding: 0;
+
+    &__submit {
+      display: none;
+    }
+  }
+}

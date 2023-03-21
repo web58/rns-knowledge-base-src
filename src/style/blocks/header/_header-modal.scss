@@ -1,0 +1,38 @@
+.header-modal {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  &[aria-hidden="false"] {
+    pointer-events: auto;
+
+    & .header-modal__content {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    display: none;
+    width: 100%;
+    color: var(--black);
+    background-color: var(--white);
+    overflow: auto;
+
+    &--gray-bg {
+      background-color: var(--light-gray);
+    }
+  }
+
+
+  @include media-min ($xl) {
+    display: none;
+  }
+}

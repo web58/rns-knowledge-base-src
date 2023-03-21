@@ -1,0 +1,19 @@
+<div class="site-header">
+  <div class="container site-header__wrapper">
+    <button class="btn-reset site-header__menu-trigger just-burger" type="button" aria-label="Меню" id="just-burger">
+      <span class="just-burger__line just-burger__line--top"></span>
+      <span class="just-burger__line just-burger__line--middle"></span>
+      <span class="just-burger__line just-burger__line--bottom"></span>
+    </button>
+    <div class="site-header__logo">
+      <a href="page-main.html">
+        <img src="img/logo.svg" width="68" height="37" alt="Ренессанс">
+      </a>
+    </div>
+    <button class="btn-reset site-header__search-trigger" type="button"><span class="visually-hidden">Поиск</span></button>
+    <div class="site-header__desktop-nav">
+      @include('site-search.html')
+      @include('user-menu.html')
+    </div>
+  </div>
+</div>
