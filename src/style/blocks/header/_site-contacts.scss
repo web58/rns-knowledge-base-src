@@ -52,6 +52,20 @@
     }
   }
 
+  &__socials {
+    display: flex;
+    padding: 16px;
+    border-top: 1px solid var(--medium-gray);
+  }
+
+  &__social {
+    margin-right: 12px;
+
+    & a {
+      display: flex;
+    }
+  }
+
   @include media-min ($md) {
     &__item {
       padding-left: 30px;
@@ -69,6 +83,10 @@
       padding-left: 30px;
       padding-right: 30px;
     }
+
+    &__socials {
+      padding: 16px 30px;
+    }
   }
 
   @include media-min ($xl) {
@@ -84,6 +102,16 @@
       & a {
         &:hover {
           text-decoration: underline;
+        }
+      }
+    }
+
+    &__social {
+      & a {
+        transition: transform .2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
         }
       }
     }
